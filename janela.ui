@@ -172,7 +172,7 @@
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>Hora</string>
+          <string>Hora(UTC)</string>
          </property>
         </widget>
        </item>
@@ -214,7 +214,7 @@
        <item>
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>Precisão horizontal:</string>
+          <string>Diluição da precisão horizontal:</string>
          </property>
         </widget>
        </item>
