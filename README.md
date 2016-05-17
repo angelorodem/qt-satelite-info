@@ -12,13 +12,13 @@ Tested with this android app:[GPS Bluetooth Output (Android)](https://play.googl
 **Quick reference:**
 
 GPS Satellites button group:
-  ⋅⋅*Normal: Satellites not being used.
-  ⋅⋅*Blue:   Satellites active (yellow in Graphics view).
+  * Normal: Satellites not being used.
+  * Blue:   Satellites active (yellow in Graphics view).
   
 GPS Graphics view:
-  ⋅⋅*Black:  Satellites not being used.
-  ⋅⋅*Yellow: Active Satellites.
-  ⋅⋅*Blue:   Selected satellites.
+  * Black:  Satellites not being used.
+  * Yellow: Active Satellites.
+  * Blue:   Selected satellites.
 
 
 
