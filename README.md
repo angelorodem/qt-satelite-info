@@ -22,8 +22,8 @@ GPS Graphics view:
   * Yellow: Active Satellites.
   * Blue:   Selected satellites.
 
-    Notes:
-  * Middle ring indicates approximate 45°
+  Notes:
+  * Center represents 90°, the middle ring approximate 45° and the outside ring 0°
   * North is fixed in the top 
 
 
