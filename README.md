@@ -22,5 +22,10 @@ GPS Graphics view:
   * Yellow: Active Satellites.
   * Blue:   Selected satellites.
 
+    Notes:
+  * Middle ring indicates approximate 45°
+  * North is fixed in the top 
+
+
 
 
