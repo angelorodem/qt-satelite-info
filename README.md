@@ -7,7 +7,7 @@ Works well with any COM ports, Bluetooth and USB...
 
 Tested with this android app:[GPS Bluetooth Output (Android)](https://play.google.com/store/apps/details?id=com.meowsbox.btgps&hl=en)
 
-![alt tag](https://raw.githubusercontent.com/angelorodem/qt-satelite-info/blob/master/Project%20image/tela%20gps.png)
+![alt tag](https://github.com/angelorodem/qt-satelite-info/blob/master/Project%20image/tela%20gps.png?raw=true)
 
 
 
