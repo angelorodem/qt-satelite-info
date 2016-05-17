@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/Imagem">
+        <file>sat_img</file>
+    </qresource>
+</RCC>
