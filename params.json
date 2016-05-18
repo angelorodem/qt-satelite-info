@@ -1,0 +1,6 @@
+{
+  "name": "Qt NMEA GPS Packet decoder",
+  "tagline": "Qt NMEA Packet decoder",
+  "body": "### Project.\r\nThis is a simple Qt project to read NMEA GPS packets and show them on a Qt GUI, it works with COM ports eg (Bluetooth, USB and others), it works perfectly with Android Bluetooth output app ([Google Play](https://play.google.com/store/apps/details?id=com.meowsbox.btgps&hl=en))\r\n\r\nNotice: Project is on Alpha stage, you may find bugs.\r\n\r\n## Screen shot\r\n![Main window of the program](https://raw.githubusercontent.com/angelorodem/qt-satelite-info/master/Project%20image/tela%20gps.png)\r\n\r\n## References\r\nGPS Satellites button group:\r\n* Normal: Satellites not being used.\r\n* Blue: Satellites active (yellow in Graphics view).\r\n\r\nGPS Graphics view:\r\n* Black: Satellites not being used.\r\n* Yellow: Active Satellites.\r\n* Blue: Selected satellites.\r\n\r\nNotes:\r\nCenter represents 90°, the middle ring approximate 45° and the outside ring 0° and the **North** is fixed in the top",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
