@@ -526,7 +526,7 @@ bail:
 
 }
 
-void Janela::on_pushButton_clicked()
+void Janela::on_abrir_bot_clicked()
 {
     com->close();
 
@@ -562,7 +562,7 @@ void Janela::on_pushButton_clicked()
 
 }
 
-void Janela::on_pushButton_2_clicked()
+void Janela::on_mapa_bot_clicked()
 {
 
 
@@ -573,12 +573,69 @@ void Janela::on_pushButton_2_clicked()
     }
 }
 
-void Janela::on_pushButton_4_clicked()
+void Janela::on_fechar_bot_clicked()
 {
     com->close();
 }
 
-void Janela::on_pushButton_3_clicked()
-{
+void Janela::on_refresh_bot_clicked(){
     refresh_com();
 }
+
+void Janela::on_actionIngles_triggered()
+{
+    //ui->altitude_l->setText("Altitude (m)");// not needed
+    ui->azimute_l->setText("Azimuth");
+    ui->elevacao_l->setText("Elevation");
+    ui->fechar_bot->setText("Close COM");
+    //ui->gps_gp->setTitle(); // not needed
+    ui->hora_l->setText("Hour (UTC)");
+    //ui->latitude_l->setText("a"); // not needed
+    //ui->longitude_l->setText("a"); // not needed
+    ui->mapa_bot->setText("See on Google maps");
+    ui->precisao_l->setText("Horizontal dilution of precision");
+    ui->refresh_bot->setText("Refresh");
+    ui->satativos_l->setText("Active Satellites");
+    ui->satelite_gp->setTitle("Satellites");
+    ui->sats_gp->setTitle("Sattelites (Visible and Active)");
+    ui->satvisiveis_l->setText("Visible Satellites");
+    ui->sinal_l->setText("Signal (db)");
+    //ui->svprn_l->setText("a"); // not needed
+    ui->velocidade_l->setText("Speed (Km/h)");
+    ui->abrir_bot->setText("Open COM");
+
+    ui->menuIdioma->setTitle("Language");
+    ui->actionIngles->setText("English");
+    ui->actionPortugu_s->setText("Portuguese");
+
+}
+
+void Janela::on_actionPortugu_s_triggered()
+{
+    //ui->altitude_l->setText("Altitude (m)");// not needed
+    ui->azimute_l->setText("Azimute");
+    ui->elevacao_l->setText("Elevação");
+    ui->fechar_bot->setText("Fechar COM");
+    //ui->gps_gp->setTitle(); // not needed
+    ui->hora_l->setText("Hora (UTC)");
+    //ui->latitude_l->setText("a"); // not needed
+    //ui->longitude_l->setText("a"); // not needed
+    ui->mapa_bot->setText("Veja no Google maps");
+    ui->precisao_l->setText("Diluição da precisão horizontal:");
+    ui->refresh_bot->setText("Atualizar");
+    ui->satativos_l->setText("Satelites ativos");
+    ui->satelite_gp->setTitle("Satelites");
+    ui->sats_gp->setTitle("Satelites (Visiveis e Ativos)");
+    ui->satvisiveis_l->setText("Satelites ativos");
+    ui->sinal_l->setText("Sinal (db)");
+    //ui->svprn_l->setText("a"); // not needed
+    ui->velocidade_l->setText("Velocidade (Km/h)");
+    ui->abrir_bot->setText("Abrir COM");
+
+    ui->menuIdioma->setTitle("Idioma");
+    ui->actionIngles->setText("Inglês");
+    ui->actionPortugu_s->setText("Português");
+
+}
+
+

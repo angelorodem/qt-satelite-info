@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Janela</string>
+   <string>NMEA Packet decoder</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -48,14 +48,14 @@
      </widget>
     </item>
     <item row="5" column="0">
-     <widget class="QLabel" name="label_7">
+     <widget class="QLabel" name="satativos_l">
       <property name="text">
        <string>Satelites ativos: </string>
       </property>
      </widget>
     </item>
     <item row="5" column="1">
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="satvisiveis_l">
       <property name="text">
        <string>Satelites vísiveis:</string>
       </property>
@@ -65,7 +65,7 @@
      <widget class="QComboBox" name="com"/>
     </item>
     <item row="4" column="0" colspan="2">
-     <widget class="QGroupBox" name="satelites_grupo">
+     <widget class="QGroupBox" name="sats_gp">
       <property name="minimumSize">
        <size>
         <width>200</width>
@@ -83,15 +83,15 @@
      </widget>
     </item>
     <item row="7" column="0" rowspan="3">
-     <widget class="QGroupBox" name="groupBox_2">
+     <widget class="QGroupBox" name="gps_gp">
       <property name="title">
        <string>GPS</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="hora_l">
          <property name="text">
-          <string>Hora(UTC)</string>
+          <string>Hora (UTC)</string>
          </property>
         </widget>
        </item>
@@ -103,7 +103,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="latitude_l">
          <property name="text">
           <string>Latitude:</string>
          </property>
@@ -117,7 +117,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="longitude_l">
          <property name="text">
           <string>Longitude:</string>
          </property>
@@ -131,7 +131,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_4">
+        <widget class="QLabel" name="precisao_l">
          <property name="text">
           <string>Diluição da precisão horizontal:</string>
          </property>
@@ -145,7 +145,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_6">
+        <widget class="QLabel" name="altitude_l">
          <property name="text">
           <string>Altitude (m):</string>
          </property>
@@ -159,7 +159,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_5">
+        <widget class="QLabel" name="velocidade_l">
          <property name="text">
           <string>Velocidade (Km/h)</string>
          </property>
@@ -173,7 +173,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="mapa_bot">
          <property name="text">
           <string>Mapa</string>
          </property>
@@ -186,48 +186,48 @@
       <zorder>longitude</zorder>
       <zorder>latitude</zorder>
       <zorder>velocidade</zorder>
-      <zorder>pushButton_2</zorder>
-      <zorder>label</zorder>
-      <zorder>label_3</zorder>
-      <zorder>label_4</zorder>
-      <zorder>label_5</zorder>
-      <zorder>label_6</zorder>
-      <zorder>label_2</zorder>
+      <zorder>mapa_bot</zorder>
+      <zorder>hora_l</zorder>
+      <zorder>longitude_l</zorder>
+      <zorder>precisao_l</zorder>
+      <zorder>velocidade_l</zorder>
+      <zorder>altitude_l</zorder>
+      <zorder>latitude_l</zorder>
      </widget>
     </item>
     <item row="0" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="abrir_bot">
         <property name="text">
          <string>Abrir COM</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="fechar_bot">
         <property name="text">
          <string>Fechar COM</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="refresh_bot">
         <property name="text">
-         <string>Refresh</string>
+         <string>Atualizar</string>
         </property>
        </widget>
       </item>
      </layout>
     </item>
     <item row="7" column="1" rowspan="3">
-     <widget class="QGroupBox" name="groupBox_3">
+     <widget class="QGroupBox" name="satelite_gp">
       <property name="title">
        <string>Satelite</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="label_9">
+        <widget class="QLabel" name="svprn_l">
          <property name="text">
           <string>SV PRN Nº</string>
          </property>
@@ -241,7 +241,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_10">
+        <widget class="QLabel" name="elevacao_l">
          <property name="text">
           <string>Elevação em graus</string>
          </property>
@@ -255,7 +255,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_11">
+        <widget class="QLabel" name="azimute_l">
          <property name="text">
           <string>Azimute</string>
          </property>
@@ -269,7 +269,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_12">
+        <widget class="QLabel" name="sinal_l">
          <property name="text">
           <string>Sinal (db)</string>
          </property>
@@ -303,6 +303,35 @@
     </item>
    </layout>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>688</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuIdioma">
+    <property name="title">
+     <string>&amp;Idioma</string>
+    </property>
+    <addaction name="actionIngles"/>
+    <addaction name="separator"/>
+    <addaction name="actionPortugu_s"/>
+   </widget>
+   <addaction name="menuIdioma"/>
+  </widget>
+  <action name="actionIngles">
+   <property name="text">
+    <string>&amp;Inglês</string>
+   </property>
+  </action>
+  <action name="actionPortugu_s">
+   <property name="text">
+    <string>&amp;Português</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

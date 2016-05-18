@@ -34,17 +34,22 @@ public:
     ~Janela();
 
 private slots:
-    void on_pushButton_clicked();
-
-    void on_pushButton_2_clicked();
 
     void sat_but_clicked();
 
     void readSerial();
 
-    void on_pushButton_4_clicked();
+    void on_actionIngles_triggered();
 
-    void on_pushButton_3_clicked();
+    void on_actionPortugu_s_triggered();
+
+    void on_abrir_bot_clicked();
+
+    void on_fechar_bot_clicked();
+
+    void on_refresh_bot_clicked();
+
+    void on_mapa_bot_clicked();
 
 private:
 
