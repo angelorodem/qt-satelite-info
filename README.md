@@ -5,6 +5,8 @@ This is a simple Qt project to read NMEA GPS packets and show them on a Qt GUI.
 
 Works with COM ports (Bluetooth, USB and others)...
 
+Windows x64 Builds can be found [Here](https://github.com/angelorodem/releases/tree/master/qt-satelite-info)
+
 This project support two languages: English and Portuguese
 
 Works perfectly with this APP:[GPS Bluetooth Output (Android)](https://play.google.com/store/apps/details?id=com.meowsbox.btgps&hl=en)
