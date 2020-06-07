@@ -11,8 +11,6 @@ This project support two languages: English and Portuguese
 
 Works perfectly with this APP:[GPS Bluetooth Output (Android)](https://play.google.com/store/apps/details?id=com.meowsbox.btgps&hl=en)
 
-_Notice: Project is on Alpha stage, you may find bugs._
-
 ![alt tag](https://github.com/angelorodem/qt-satelite-info/blob/master/Project%20image/tela%20gps.png?raw=true)
 
 **Quick reference:**
