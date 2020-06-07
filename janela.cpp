@@ -25,7 +25,6 @@ Janela::Janela(QWidget *parent) : QMainWindow(parent), ui(new Ui::Janela){
     scene->addLine(300,200,100,200,*pen_preto);
     ui->satview->scale(-1,1);
 
-    //-------------
 
     com = new QSerialPort(this);
     serialBuffer = "";
@@ -80,7 +79,6 @@ void Janela::desenha_sat(float raio, float azimuth, bool usado, int num){
         sats_grap.push_back(scene->addEllipse(x,y,10,10,*pen_preto,*brush_preto));
     sat_ref.insert(num,(int)(sats_grap.size()-1));
 
-    //sats_grap.back()->setFlags(QGraphicsItem::ItemIsMovable);
 }
 
 void Janela::limpa_sat(){
@@ -101,8 +99,6 @@ void Janela::limpa_sat(){
         scene->addLine(300,200,100,200,*pen_preto);
 
     }
-
-
 
 }
 
@@ -390,18 +386,9 @@ void Janela::GPGSV(QString pacote){
                         desenha_sat(satelites_v[var][vara].B_elevacao_graus * 1.11,satelites_v[var][vara].C_azimuth,false,satelites_v[var][vara].A_sv_prn);
                     layouts[ui->satelite_layout->count()-1]->addWidget(sat_botoes.back());
                 }
-
-
-
             }
-
         }
-
-
     }
-
-
-
 }
 
 void Janela::GPRMC(QString pacote){
@@ -433,8 +420,6 @@ void Janela::sat_but_clicked(){
     QString aaa(button->text());
     int inx=0;
 
-
-
     for(auto e : sat_ref.keys())
     {
         if(e == aaa.toInt())
@@ -445,7 +430,6 @@ void Janela::sat_but_clicked(){
     if(last_sat != -1){
         sats_grap[last_sat]->setBrush(*last);
     }
-
 
 
     if(sats_grap[inx]->brush() == *brush_preto){
@@ -465,14 +449,9 @@ void Janela::sat_but_clicked(){
                 ui->azimuth->setText(QString::number(satelites_v[var][vara].C_azimuth));
                 ui->sinal->setText(QString::number(satelites_v[var][vara].D_snr));
 
-
             }
-
         }
     }
-
-
-
 }
 
 void Janela::decodifica(QStringList pacotes){
@@ -482,7 +461,7 @@ void Janela::decodifica(QStringList pacotes){
     foreach (QString pacote, pacotes) {
         starting_point=0;
         if(pacote == "")
-            break;
+            continue;
         while (pacote.at(starting_point) != '$') {
             starting_point++;
             if (starting_point >= pacote.size()) {
@@ -515,8 +494,6 @@ void Janela::decodifica(QStringList pacotes){
             pacotes_invalidos++;
         }
 
-        //qDebug() << tipo;
-
         continue;
 bail:
         pacotes_invalidos++;
@@ -529,43 +506,19 @@ bail:
 void Janela::on_abrir_bot_clicked()
 {
     com->close();
-
-        com->setPortName(ui->com->currentText().split(" ")[0]);
-        com->open(QSerialPort::ReadWrite);
-        com->setBaudRate(QSerialPort::Baud9600);
-        com->setDataBits(QSerialPort::Data8);
-        com->setFlowControl(QSerialPort::NoFlowControl);
-        com->setParity(QSerialPort::NoParity);
-        com->setStopBits(QSerialPort::OneStop);
-        QObject::connect(com, SIGNAL(readyRead()), this, SLOT(readSerial()));
-
-
-    /*for (int var = 0; var < 1000; ++var) {
-        QString buffer("$GPRMC,232803.000,A,2709.5426,S,05131.4711,W,0.14,6.67,110416,,,A*64\n"
-                       "$GPGSV,5,1,20,03,69,085,26,23,55,181,32,09,42,233,21,22,35,057,43*78\n"
-                       "$GPGGA,232803.000,2709.5426,S,05131.4711,W,1,8,0.96,697.8,M,3.1,M,,*62\n"
-                       "$GPGSA,A,3,03,23,09,22,07,16,01,26,,,,,1.32,0.96,0.90*0A\n"
-                       "$GPGSV,5,2,20,07,35,319,19,16,29,090,24,06,24,235,17,01,23,357,33*79\n"
-                       "$GPGSV,5,3,20,49,21,073,39,26,19,120,24,11,07,001,,30,07,321,29*7A\n"
-                       "$GPGSV,5,4,20,07,35,319,19,16,29,090,24,06,24,235,17,01,23,357,33*79\n"
-                       "$GPGSV,5,5,20,49,21,073,39,26,19,120,24,11,07,001,,30,07,321,29*7A\n"
-                       );
-
-
-
-        decodifica(buffer.split("\n",QString::SkipEmptyParts));
-    }*/
-
-
-
-
+    com->setPortName(ui->com->currentText().split(" ")[0]);
+    com->open(QSerialPort::ReadWrite);
+    com->setBaudRate(QSerialPort::Baud9600);
+    com->setDataBits(QSerialPort::Data8);
+    com->setFlowControl(QSerialPort::NoFlowControl);
+    com->setParity(QSerialPort::NoParity);
+    com->setStopBits(QSerialPort::OneStop);
+    QObject::connect(com, SIGNAL(readyRead()), this, SLOT(readSerial()));
 
 }
 
 void Janela::on_mapa_bot_clicked()
 {
-
-
 
     if(ui->longitude->text() != "" && ui->latitude->text() != ""){
         QString link = "https://www.google.com.br/maps/place/"+ ui->latitude->text()+" "+ui->longitude->text();
@@ -584,14 +537,10 @@ void Janela::on_refresh_bot_clicked(){
 
 void Janela::on_actionIngles_triggered()
 {
-    //ui->altitude_l->setText("Altitude (m)");// not needed
     ui->azimute_l->setText("Azimuth");
     ui->elevacao_l->setText("Elevation");
     ui->fechar_bot->setText("Close COM");
-    //ui->gps_gp->setTitle(); // not needed
     ui->hora_l->setText("Hour (UTC)");
-    //ui->latitude_l->setText("a"); // not needed
-    //ui->longitude_l->setText("a"); // not needed
     ui->mapa_bot->setText("See on Google maps");
     ui->precisao_l->setText("Horizontal dilution of precision");
     ui->refresh_bot->setText("Refresh");
@@ -600,10 +549,8 @@ void Janela::on_actionIngles_triggered()
     ui->sats_gp->setTitle("Sattelites (Visible and Active)");
     ui->satvisiveis_l->setText("Visible Satellites");
     ui->sinal_l->setText("Signal (db)");
-    //ui->svprn_l->setText("a"); // not needed
     ui->velocidade_l->setText("Speed (Km/h)");
     ui->abrir_bot->setText("Open COM");
-
     ui->menuIdioma->setTitle("Language");
     ui->actionIngles->setText("English");
     ui->actionPortugu_s->setText("Portuguese");
@@ -612,14 +559,10 @@ void Janela::on_actionIngles_triggered()
 
 void Janela::on_actionPortugu_s_triggered()
 {
-    //ui->altitude_l->setText("Altitude (m)");// not needed
     ui->azimute_l->setText("Azimute");
     ui->elevacao_l->setText("Elevação");
     ui->fechar_bot->setText("Fechar COM");
-    //ui->gps_gp->setTitle(); // not needed
     ui->hora_l->setText("Hora (UTC)");
-    //ui->latitude_l->setText("a"); // not needed
-    //ui->longitude_l->setText("a"); // not needed
     ui->mapa_bot->setText("Veja no Google maps");
     ui->precisao_l->setText("Diluição da precisão horizontal:");
     ui->refresh_bot->setText("Atualizar");
@@ -628,10 +571,8 @@ void Janela::on_actionPortugu_s_triggered()
     ui->sats_gp->setTitle("Satelites (Visiveis e Ativos)");
     ui->satvisiveis_l->setText("Satelites ativos");
     ui->sinal_l->setText("Sinal (db)");
-    //ui->svprn_l->setText("a"); // not needed
     ui->velocidade_l->setText("Velocidade (Km/h)");
     ui->abrir_bot->setText("Abrir COM");
-
     ui->menuIdioma->setTitle("Idioma");
     ui->actionIngles->setText("Inglês");
     ui->actionPortugu_s->setText("Português");
